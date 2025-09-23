@@ -1,3 +1,5 @@
+// cambio forzado para redeploy en Netlify
+
 function includeHTML(id, file) {
     fetch(file)
     .then(response => {
