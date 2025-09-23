@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("navbar")) includeHTML("navbar", "navbar.html");
     if (document.getElementById("footer")) includeHTML("footer", "footer.html");
 
-    // ✅ Redirigir a gracias.html si Formsubmit devuelve ?success=true
-    if (window.location.search.includes("success=true")) {
+    // ✅ Si venís de Formsubmit, redirigí a gracias.html
+    if (document.referrer.includes("formsubmit.co")) {
         window.location.href = "gracias.html";
     }
 });
