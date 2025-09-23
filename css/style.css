@@ -1,0 +1,156 @@
+/* ----------- General ----------- */
+body {
+    padding-top: 70px; /* para que el contenido no quede debajo de la navbar */
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+    margin: 0;
+}
+
+/* ----------- Formularios ----------- */
+form {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ----------- Hero ----------- */
+#hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #d1c0ab; 
+}
+.gradient-overlay {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #d1c0ab 0%, transparent 20%, transparent 80%, #d1c0ab 100%);
+}
+.hero-image {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    background: url("../images/Frente.png") center/cover no-repeat;
+    border-radius: 20px;
+}
+
+/* ----------- Habitaciones y Galerías ----------- */
+.habitaciones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.habitacion-card img,
+.habitacion img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.habitacion-card img:hover {
+    transform: scale(1.05);
+}
+.galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ----------- Navbar ----------- */
+.navbar-custom {
+    background-color: grey;
+    backdrop-filter: blur(6px);
+}
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #363126 !important;
+    background-color: rgba(255, 253, 253, 0.5);
+    border-radius: 5px;
+}
+.nav-link.active {
+    color: #272726 !important;
+    font-weight: bold;
+}
+
+/* ----------- Footer ----------- */
+footer {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+.logo-round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.icon-round {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+.icon-round.icon-service {
+    width: 100px;
+    height: 100px;
+}
+.habitacion {
+    text-align: center;
+}
+/* Asegurar que todas las imágenes en cards tengan el mismo tamaño */
+/* Para la card completa */
+.card {
+  width: 100%;          /* ocupa todo el ancho de la columna */
+    display: flex;        
+    flex-direction: column;
+}
+
+/* Para la imagen dentro de la card */
+.card img {
+  width: 100%;          /* ocupa todo el ancho de la card */
+  height: 220px;        /* altura fija para todas */
+  object-fit: cover;    /* recorta sin deformar */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.logo-gracias {
+  width: 180px;   /* un poco más grande que antes */
+  height: auto;   /* mantiene proporción */
+  border-radius: 50%; /* opcional, estilo redondo */
+}
