@@ -44,6 +44,7 @@ form input, form textarea {
 }
 .hero-image {
     height: 100%;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,8 +52,16 @@ form input, form textarea {
     width: 100%;
     text-align: center;
     background: url("../images/Frente.png") center/cover no-repeat;
-    border-radius: 20px;
+    border-radius: 20px; /* opcional: bordes redondeados */
 }
+
+/* 📱 En móviles: mostrar la imagen completa */
+@media (max-width: 768px) {
+    .hero-image {
+        background: #d1c0ab url("../images/Frente.png") center/contain no-repeat;
+    }
+}
+
 
 /* ----------- Habitaciones y Galerías ----------- */
 .habitaciones-grid {
