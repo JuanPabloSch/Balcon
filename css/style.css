@@ -42,6 +42,7 @@ form input, form textarea {
     justify-content: center;
     background: linear-gradient(to right, #d1c0ab 0%, transparent 20%, transparent 80%, #d1c0ab 100%);
 }
+/* Estilo actual del hero */
 .hero-image {
     height: 100%;
     padding: 0;
@@ -52,13 +53,28 @@ form input, form textarea {
     width: 100%;
     text-align: center;
     background: url("../images/Frente.png") center/cover no-repeat;
-    border-radius: 20px; /* opcional: bordes redondeados */
+    border-radius: 20px;
+    color: white;
 }
 
-/* 📱 En móviles: mostrar la imagen completa */
+/* 📱 En móviles: mover el texto debajo de la imagen */
 @media (max-width: 768px) {
     .hero-image {
-        background: #d1c0ab url("../images/Frente.png") center/contain no-repeat;
+        background: url("../images/Frente.png") center/contain no-repeat;
+        min-height: 300px;  /* altura mínima para que se vea la foto */
+    }
+
+  /* ocultamos el texto dentro del hero en móvil */
+    .hero-image h1,
+    .hero-image p {
+        display: none;
+    }
+
+  /* mostramos un bloque de texto debajo */
+    .hero-text-mobile {
+        text-align: center;
+        padding: 20px;
+        color: #222;
     }
 }
 
