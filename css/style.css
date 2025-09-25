@@ -183,3 +183,73 @@ footer {
     font-style: italic;
     color: #333;
 }
+/* Íconos del footer */
+footer .col-auto img {
+    margin: 0 4px;
+    vertical-align: middle;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover: se agrandan un poco y se ponen más brillantes */
+footer .col-auto img:hover {
+    transform: scale(1.2);
+    opacity: 0.85;
+}
+/* Solo a los links de la sección de redes sociales */
+footer .col-auto.social a {
+    font-size: 0;
+    text-decoration: none;
+}
+/* Colores por categoría (mismos del mapa) */
+:root{
+    --c-ciudad:#F83030;
+    --c-alre:#F89050;
+    --c-quebrada:#00B860;
+    --c-yungas:#5070F8;
+    --c-puna:#8850F8;
+}
+
+/* Puntito de categoría (usa --dot si la seteás en el HTML;
+   si no, cae al default de la categoría) */
+.badge-dot{
+    width:10px; height:10px; border-radius:50%;
+    display:inline-block; margin-right:6px; flex-shrink:0;
+    box-shadow:0 0 0 2px rgba(0,0,0,.06);
+    background: var(--dot, var(--default-dot, #ccc));
+}
+
+/* Defaults por categoría (siguen funcionando si no definís --dot) */
+.dot-ciudad   { --default-dot: var(--c-ciudad); }
+.dot-alre     { --default-dot: var(--c-alre); }
+.dot-quebrada { --default-dot: var(--c-quebrada); }
+.dot-yungas   { --default-dot: var(--c-yungas); }
+.dot-puna     { --default-dot: var(--c-puna); }
+
+/* === SOLO en la página de Atractivos === */
+/* Quitar el padding lateral que deja un "pelín" en la navbar (solo en Atractivos) */
+.page-atractivos .navbar,
+.page-atractivos .navbar > .container-fluid,
+.page-atractivos .navbar > .container,
+.page-atractivos .navbar > .container-xxl {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* Asegurá que el contenedor NO se pase de ancho en pantallas < 1400px */
+.page-atractivos #atractivos.container-xxl { max-width: 100%; }
+
+/* Si querés estirarlo un poco SOLO en pantallas grandes, usá el media query: */
+@media (min-width: 1400px){
+    .page-atractivos #atractivos.container-xxl { max-width: 1440px; }
+}
+
+/* El mapa nunca debe exceder su columna */
+.page-atractivos .sidebar-map img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
