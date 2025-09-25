@@ -7,80 +7,178 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/include.js" defer></script>
+    <div include-html="analytics.html"></div>
     </head>
     <body>
     <div id="navbar"></div>
 
     <section id="atractivos" class="container my-5">
         <h2 class="section-title text-center mb-4">Atractivos de Jujuy</h2>
-        <div class="row g-4">
 
-        <!-- Card 1 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/purma.jfif" class="card-img-top" alt="Purmamarca">
-            <div class="card-body">
-                <h5 class="card-title">Cerro de los Siete Colores</h5>
-                <p class="card-text">Un paisaje único en Purmamarca.</p>
+        <div class="row">
+        <!-- Columna principal con cards -->
+        <div class="col-lg-9">
+            
+            <!-- 🏙️ Ciudad -->
+            <h3 class="mt-4">🏙️ En la ciudad</h3>
+            <div class="row g-4">
+            <!-- Card Plaza Belgrano -->
+            <div class="col-md-6 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/plaza-belgrano.jpg" class="card-img-top" alt="Plaza Belgrano">
+                <div class="card-body">
+                    <h5 class="card-title">Plaza Belgrano y Catedral</h5>
+                    <p class="card-text">Centro histórico de San Salvador, rodeado de edificios emblemáticos y la Catedral Basílica con su estilo colonial.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Card Macedonio Graz -->
+            <div class="col-md-6 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/macedonio-graz.jpg" class="card-img-top" alt="Museo Macedonio Graz">
+                <div class="card-body">
+                    <h5 class="card-title">Museo Macedonio Graz</h5>
+                    <p class="card-text">Espacio cultural con exposiciones de arte, literatura y música en una casona tradicional del siglo XIX.</p>
+                </div>
+                </div>
             </div>
             </div>
+
+            <!-- 🌳 Alrededores -->
+            <h3 class="mt-5">🌳 Alrededores</h3>
+            <div class="row g-4">
+            <!-- Termas -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/termas-de-reyes.jpg" class="card-img-top" alt="Termas de Reyes">
+                <div class="card-body">
+                    <h5 class="card-title">Termas de Reyes</h5>
+                    <p class="card-text">Aguas termales famosas por sus propiedades medicinales, rodeadas de montañas a pocos km de la capital.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Lagunas de Yala -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/lagunas-yala.jpg" class="card-img-top" alt="Lagunas de Yala">
+                <div class="card-body">
+                    <h5 class="card-title">Lagunas de Yala</h5>
+                    <p class="card-text">Parque provincial con lagunas de altura, senderos y paisajes ideales para caminatas y picnic.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Dique La Ciénaga -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/dique-cienaga.jpg" class="card-img-top" alt="Dique La Ciénaga">
+                <div class="card-body">
+                    <h5 class="card-title">Dique La Ciénaga</h5>
+                    <p class="card-text">Lugar ideal para deportes náuticos, pesca y descanso en los valles cercanos a El Carmen.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- 🏔️ Quebrada -->
+            <h3 class="mt-5">🏔️ Quebrada de Humahuaca</h3>
+            <div class="row g-4">
+            <!-- Purmamarca -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/purma.jfif" class="card-img-top" alt="Purmamarca">
+                <div class="card-body">
+                    <h5 class="card-title">Cerro de los Siete Colores</h5>
+                    <p class="card-text">En Purmamarca, un ícono natural donde los cerros muestran tonos únicos formados hace millones de años.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Tilcara -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/tilcara.png" class="card-img-top" alt="Tilcara">
+                <div class="card-body">
+                    <h5 class="card-title">Pucará de Tilcara</h5>
+                    <p class="card-text">Antigua fortaleza prehispánica reconstruida con vistas panorámicas y un museo arqueológico.</p>
+                </div>
+                </div>
+            </div>
+            <!-- Humahuaca -->
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/humahuaca.jpg" class="card-img-top" alt="Humahuaca">
+                <div class="card-body">
+                    <h5 class="card-title">Humahuaca</h5>
+                    <p class="card-text">Ciudad histórica con calles empedradas, el Monumento a la Independencia y acceso al Hornocal.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- 🌿 Yungas -->
+            <h3 class="mt-5">🌿 Yungas</h3>
+            <div class="row g-4">
+                <!-- Calilegua -->
+                <div class="col-md-6 d-flex">
+                    <div class="card shadow-sm h-100">
+                    <img src="images/calilegua.jpg" class="card-img-top" alt="Parque Nacional Calilegua">
+                    <div class="card-body">
+                        <h5 class="card-title">Parque Nacional Calilegua</h5>
+                        <p class="card-text">Área protegida de selva de montaña con gran biodiversidad y senderos para trekking y avistaje de aves.</p>
+                    </div>
+                    </div>
+                </div>
+                <!-- San Francisco -->
+                <div class="col-md-6 d-flex">
+                    <div class="card shadow-sm h-100">
+                    <img src="images/san-francisco.jpg" class="card-img-top" alt="San Francisco">
+                    <div class="card-body">
+                        <h5 class="card-title">San Francisco</h5>
+                        <p class="card-text">Pueblo rodeado de selva, ideal para ecoturismo, caminatas y contacto directo con la naturaleza en plena Yunga jujeña.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🏜️ Puna -->
+            <h3 class="mt-5">🏜️ Puna</h3>
+            <div class="row g-4">
+            <!-- Salinas -->
+            <div class="col-md-6 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/salinas.jpg" class="card-img-top" alt="Salinas Grandes">
+                <div class="card-body">
+                    <h5 class="card-title">Salinas Grandes</h5>
+                    <p class="card-text">Extenso salar a más de 3.000 msnm donde el cielo se refleja sobre la superficie creando paisajes únicos.</p>
+                </div>
+                </div>
+            </div>
+            <!-- La Quiaca -->
+            <div class="col-md-6 d-flex">
+                <div class="card shadow-sm h-100">
+                <img src="images/la-quiaca.jpg" class="card-img-top" alt="La Quiaca">
+                <div class="card-body">
+                    <h5 class="card-title">La Quiaca</h5>
+                    <p class="card-text">Ciudad fronteriza con Bolivia a 3.442 msnm, con fuerte identidad cultural puneña.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Mapa (solo en mobile, abajo) -->
+            <div class="d-block d-lg-none mt-5">
+            <h5 class="text-center mb-3">Mapa de atractivos</h5>
+            <img src="images/jujuypuntos.png" alt="Mapa de Jujuy" class="img-fluid rounded shadow-sm">
+            </div>
+
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/tilcara.png" class="card-img-top" alt="Tilcara">
-            <div class="card-body">
-                <h5 class="card-title">Pucará de Tilcara</h5>
-                <p class="card-text">Importante sitio arqueológico prehispánico.</p>
-            </div>
+        <!-- Columna lateral con mapa (solo en desktop) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="sticky-top" style="top:100px;">
+            <h5 class="text-center mb-3">Mapa de atractivos</h5>
+            <img src="images/jujuypuntos.png" alt="Mapa de Jujuy" class="img-fluid rounded shadow-sm">
             </div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/salinas.jpg" class="card-img-top" alt="Salinas Grandes">
-            <div class="card-body">
-                <h5 class="card-title">Salinas Grandes</h5>
-                <p class="card-text">Un inmenso desierto blanco de sal.</p>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/Hornocal.jfif" class="card-img-top" alt="Hornocal">
-            <div class="card-body">
-                <h5 class="card-title">Serranía de Hornocal</h5>
-                <p class="card-text">La montaña de los 14 colores en Humahuaca.</p>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/yungas.png" class="card-img-top" alt="Yungas">
-            <div class="card-body">
-                <h5 class="card-title">Las Yungas</h5>
-                <p class="card-text">Selvas verdes ideales para ecoturismo.</p>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="col-md-4 d-flex">
-            <div class="card shadow-sm h-100">
-            <img src="images/termas-de-reyes.jpg" class="card-img-top" alt="Termas de Reyes">
-            <div class="card-body">
-                <h5 class="card-title">Termas de Reyes</h5>
-                <p class="card-text">Aguas termales rodeadas de cerros.</p>
-            </div>
-            </div>
-        </div>
-
         </div>
     </section>
 
