@@ -252,4 +252,113 @@ footer .col-auto.social a {
     display: block;
 }
 
+.card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    }
 
+    .card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    }
+
+    .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#opiniones .card {
+    background-color: #fff7ec;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #opiniones .card-body {
+    padding: 1rem 1.2rem 0.6rem 1.2rem;
+    }
+
+    #opiniones .card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 0.4rem;
+    }
+
+    #opiniones h6 {
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0;
+    color: #000;
+    }
+
+    #opiniones .text-warning {
+    color: #e0aa3e !important;
+    font-size: 0.9rem;
+    }
+
+    /* Todas las cards de opiniones con la misma altura */
+    #opiniones .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    }
+
+    #opiniones .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* reparte texto y firma */
+    height: 100%;
+}
+
+/* === Hero principal (Inicio) === */
+#hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    }
+
+    .hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    /* Título del hero */
+    .hero-text h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 1px rgba(200, 200, 200, 0.4); /* borde gris suave */
+    text-stroke: 1px rgba(200, 200, 200, 0.4);
+    }
+
+    /* Subtítulo */
+    .hero-text p {
+    color: #f2f2f2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    /* Imagen y fondo del hero */
+    @media (min-width: 768px) {
+    .hero-image {
+        background: url("../images/Frente.png") center/cover no-repeat;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+    }
+    .hero-mobile-img {
+        display: none;
+    }
+}

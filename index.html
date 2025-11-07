@@ -9,6 +9,7 @@
     <script src="js/include.js" defer></script>
     <div include-html="analytics.html"></div>
     </head>
+
     <body>
     <div id="navbar"></div>
 
@@ -19,12 +20,14 @@
         <img src="images/Frente.png" alt="Fachada hostel" class="hero-mobile-img">
 
         <!-- Texto -->
-        <h1 class="display-4">Bienvenidos a El Balcón de la Tata Hostel</h1>
-        <p class="lead">
+        <div class="hero-text">
+            <h1 class="display-4">El Balcón de la Tata Hostel</h1>
+            <p class="lead">
             En el centro de la ciudad te espera un hospedaje pensado para vos. 
             Cubículos individuales para dormir con total comodidad y privacidad, 
-            perfectos para viajeros y nómadas digitales.
-        </p>
+            perfectos para viajeros y nómades digitales.
+            </p>
+        </div>
         </div>
     </header>
 
@@ -42,54 +45,72 @@
         </iframe>
     </section>
 
-<section id="opiniones" class="container my-5">
-    <h2 class="text-center mb-4">Opiniones de nuestros huéspedes</h2>
-    <div class="row g-4">
+    <!-- Opiniones -->
+    <section id="opiniones" class="container my-5">
+        <h2 class="text-center mb-4">Opiniones de nuestros huéspedes</h2>
+        <div class="row g-4">
+
         <!-- Opinión 1 -->
         <div class="col-md-4">
-        <div class="card review-card h-100 text-center">
-            <div class="card-body d-flex flex-column justify-content-between">
-            <p class="card-text flex-grow-1">
-                “Excelente lugar, limpio y muy cómodo. La ubicación es ideal.”
-            </p>
-            <h6 class="mt-3 fw-bold">– Juan P.</h6>
-            <div class="text-warning mt-2">★★★★★</div>
+            <div class="card review-card text-center">
+            <div class="card-body">
+                <p class="card-text">
+                “Lugar familiar, cálido, habitaciones hermosas y limpias.
+                Carolina es súper amorosa, me recomendó lugares para conocer.
+                Con ganas de volver.”
+                </p>
+                <h6 class="fw-bold d-inline-flex align-items-center justify-content-center">
+                <span style="color:#000;">– Florencia</span>
+                <span class="text-warning ms-2">★★★★★</span>
+                </h6>
+            </div>
             </div>
         </div>
-        </div>
+
         <!-- Opinión 2 -->
         <div class="col-md-4">
-        <div class="card review-card h-100 text-center">
-            <div class="card-body d-flex flex-column justify-content-between">
-            <p class="card-text flex-grow-1">
-                “Muy buena atención, personal amable y predispuesto. ¡Me sentí como en casa!”
-            </p>
-            <h6 class="mt-3 fw-bold">– Laura C.</h6>
-            <div class="text-warning mt-2">★★★★★</div>
+            <div class="card review-card text-center">
+            <div class="card-body">
+                <p class="card-text">
+                “Dicen que a Jujuy se vuelve, y volveré al Balcón de la Tata.
+                Casita acogedora, limpio, jardín hermoso y desayuno riquísimo.
+                En pleno centro, ideal para descansar.”
+                </p>
+                <h6 class="fw-bold d-inline-flex align-items-center justify-content-center">
+                <span style="color:#000;">– Silvana</span>
+                <span class="text-warning ms-2">★★★★★</span>
+                </h6>
+            </div>
             </div>
         </div>
-        </div>
+
         <!-- Opinión 3 -->
         <div class="col-md-4">
-        <div class="card review-card h-100 text-center">
-            <div class="card-body d-flex flex-column justify-content-between">
-            <p class="card-text flex-grow-1">
-                “El concepto de cubículos es genial, muy cómodo para descansar y trabajar.”
-            </p>
-            <h6 class="mt-3 fw-bold">– Martín R.</h6>
-            <div class="text-warning mt-2">★★★★★</div>
+            <div class="card review-card text-center">
+            <div class="card-body">
+                <p class="card-text">
+                “Casa familiar, muy bien ubicada, tranquila y con una ambientación muy bonita.
+                Volveré a Jujuy… volveré al Balcón de la Tata.”
+                </p>
+                <h6 class="fw-bold d-inline-flex align-items-center justify-content-center">
+                <span style="color:#000;">– Facundo</span>
+                <span class="text-warning ms-2">★★★★★</span>
+                </h6>
+            </div>
             </div>
         </div>
-        </div>
-    </div>
 
-    <!-- Botón -->
-    <div class="text-center mt-4">
-        <a href=https://maps.app.goo.gl/pRomze3guQXFHxRN9 target="_blank" class="btn btn-primary">
+        </div>
+
+        <!-- Botón -->
+        <div class="text-center mt-4">
+        <a href="https://www.google.com/maps/place/El+Balcón+de+la+Tata/@-24.18655,-65.30605,17z/data=!4m7!3m6!1s0x941b0ff2007ab7a7:0x68ede3dbcee085f1!8m2!3d-24.18655!4d-65.303471!9m1!1b1" 
+        target="_blank" 
+        class="btn btn-primary">
         Ver más reseñas en Google
         </a>
-    </div>
-</section>
+        </div>
+    </section>
 
     <div id="footer"></div>
 
