@@ -8,51 +8,60 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/include.js" defer></script>
     <div include-html="analytics.html"></div>
-</head>
-<body>
+    </head>
+
+    <body>
     <div id="navbar"></div>
 
-    <!-- Formulario de contacto -->
     <section class="container my-5">
         <h2 class="text-center mb-4">Formulario de Contacto</h2>
-        <form action="https://formsubmit.co/lauracarolinacorro@gmail.com" method="POST" class="needs-validation" novalidate>
-        <!-- Config extra de Formsubmit -->
+
+        <form id="contactoForm" action="https://formsubmit.co/lauracarolinacorro@gmail.com" method="POST" novalidate>
         <input type="hidden" name="_next" value="https://elbalcondelatata.netlify.app/gracias.html">
         <input type="hidden" name="_captcha" value="false">
-            <!-- Token para detectar desde JS -->
-            <input type="hidden" name="_formsubmit_id" value="balcon">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    <div class="invalid-feedback">Por favor, ingresá tu nombre.</div>
-                </div>
-                <div class="col-md-6">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required>
-                    <div class="invalid-feedback">Por favor, ingresá tu apellido.</div>
-                </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{7,15}" required>
-                <div class="invalid-feedback">Ingresá un teléfono válido (solo números, 7-15 dígitos).</div>
-            </div>
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="50" required>
+            <div class="form-text">Solo letras, máximo 50 caracteres</div>
+            <div class="invalid-feedback">Ingresá solo letras (sin números ni símbolos)</div>
+        </div>
 
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">Ingresá un email válido.</div>
-            </div>
+        <!-- Apellido -->
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" maxlength="50" required>
+            <div class="form-text">Solo letras, máximo 50 caracteres</div>
+            <div class="invalid-feedback">Ingresá solo letras (sin números ni símbolos)</div>
+        </div>
 
-            <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
-                <div class="invalid-feedback">Por favor, escribí tu mensaje.</div>
-            </div>
+        <!-- Teléfono -->
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" maxlength="15" required>
+            <div class="form-text">Solo números, entre 7 y 15 dígitos</div>
+            <div class="invalid-feedback">Ingresá un teléfono válido (solo números)</div>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
+            <div class="form-text">Debe tener formato ejemplo@correo.com</div>
+            <div class="invalid-feedback">Ingresá un email válido</div>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" maxlength="500" required></textarea>
+            <small id="mensajeContador" class="text-muted d-block text-end">0 / 500</small>
+            <div class="form-text">Escribí tu mensaje (máximo 500 caracteres)</div>
+            <div class="invalid-feedback">Por favor, completá el mensaje</div>
+        </div>
+
+        <button id="btnEnviar" type="submit" class="btn btn-secondary" disabled>Enviar</button>
         </form>
     </section>
 
@@ -60,21 +69,82 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script de validación Bootstrap -->
     <script>
-        (() => {
-            'use strict';
-            const forms = document.querySelectorAll('.needs-validation');
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        })();
-    </script>
-</body>
-</html>
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactoForm');
+    const inputs = form.querySelectorAll('input, textarea');
+    const mensaje = document.getElementById('mensaje');
+    const contador = document.getElementById('mensajeContador');
+    const btnEnviar = document.getElementById('btnEnviar');
+
+    const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/;
+    const soloNumeros = /^[0-9]+$/;
+    const LIMITE_TIEMPO_MS = 5 * 60 * 1000; // 5 minutos
+
+    // 🔹 Validación en tiempo real
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+        validarCampo(input);
+        validarFormulario();
+        });
+    });
+
+    // 🔹 Contador del mensaje
+    mensaje.addEventListener('input', () => {
+        contador.textContent = `${mensaje.value.length} / 500`;
+        contador.style.color = mensaje.value.length > 450 ? 'red' : '#6c757d';
+    });
+
+    function validarCampo(input) {
+        let valido = true;
+
+        if (input.id === 'nombre' || input.id === 'apellido') {
+        valido = soloLetras.test(input.value.trim());
+        } else if (input.id === 'telefono') {
+        valido = soloNumeros.test(input.value.trim()) && input.value.length >= 7 && input.value.length <= 15;
+        } else if (input.id === 'email') {
+        valido = input.checkValidity();
+        } else if (input.id === 'mensaje') {
+        valido = input.value.trim().length > 0 && input.value.trim().length <= 500;
+        }
+
+        input.classList.remove('is-valid', 'is-invalid');
+        if (input.value.trim() !== '') {
+        input.classList.add(valido ? 'is-valid' : 'is-invalid');
+        }
+        return valido;
+    }
+
+    function validarFormulario() {
+        const camposValidos = Array.from(inputs).every(input => validarCampo(input));
+        btnEnviar.disabled = !camposValidos;
+        btnEnviar.classList.toggle('btn-primary', camposValidos);
+        btnEnviar.classList.toggle('btn-secondary', !camposValidos);
+    }
+
+    // 🔹 Prevención de envíos repetidos
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        // Último envío guardado
+        const ultimoEnvio = localStorage.getItem('ultimoEnvio');
+        const ahora = Date.now();
+
+        if (ultimoEnvio && ahora - ultimoEnvio < LIMITE_TIEMPO_MS) {
+        const restante = Math.ceil((LIMITE_TIEMPO_MS - (ahora - ultimoEnvio)) / 60000);
+        alert(`🕒 Ya enviaste un mensaje hace poco. Podés volver a enviar otro en ${restante} minuto${restante > 1 ? 's' : ''}.`);
+        return;
+        }
+
+        if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+        }
+
+        // Guardar tiempo del envío y enviar
+        localStorage.setItem('ultimoEnvio', ahora);
+        form.submit();
+    });
+});
+</script>

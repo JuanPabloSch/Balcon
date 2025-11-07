@@ -20,4 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.referrer.includes("formsubmit.co")) {
         window.location.href = "gracias.html";
     }
+    if (document.querySelector('[include-html="analytics.html"]')) {
+    fetch("analytics.html")
+    .then(res => res.text())
+    .then(html => {
+        document.head.insertAdjacentHTML("beforeend", html);
+    })
+    .catch(err => console.error("Error cargando analytics:", err));
+}
+
 });
