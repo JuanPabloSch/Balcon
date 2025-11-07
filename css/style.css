@@ -362,3 +362,23 @@ footer .col-auto.social a {
         display: none;
     }
 }
+
+    /* Íconos / imágenes de servicios */
+    .service-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 576px) {
+    .service-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
