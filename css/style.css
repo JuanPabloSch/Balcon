@@ -2,7 +2,7 @@
 body {
     padding-top: 70px; /* para que el contenido no quede debajo de la navbar */
     font-family: 'Trebuchet MS', sans-serif;
-    background-color: #fdfdfd;
+    background-color: #f8f6f3;
     color: #222;
     margin: 0;
 }
@@ -31,38 +31,91 @@ form input, form textarea {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #b5ab9f;
     color: white;
-    background-color: #d1c0ab;
 }
 
 .hero-image {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     text-align: center;
     border-radius: 20px;
     padding: 40px;
+    overflow: hidden;
 }
 
-/* Imagen del hero en móviles */
+/* oscurece un poco la imagen */
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+/* texto por encima */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* título */
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #F89050;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* subtítulo */
+.hero-text p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin-top: 15px;
+}
+
+/* imagen visible solo en mobile */
 .hero-mobile-img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-/* En desktop → usar fondo con texto encima */
+/* desktop */
 @media (min-width: 768px) {
     .hero-mobile-img {
         display: none;
     }
+
     .hero-image {
         background: url("../images/Frente.png") center/cover no-repeat;
         height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: white;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-image::before {
+        display: none;
     }
 }
 
@@ -338,7 +391,7 @@ footer .col-auto.social a {
 
     /* Subtítulo */
     .hero-text p {
-    color: #f2f2f2;
+    color: #F89050;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     font-size: 1.2rem;
     line-height: 1.6;
